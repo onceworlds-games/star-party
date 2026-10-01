@@ -1,0 +1,20 @@
+{
+  "slug": "starparty",
+  "name": "Star Party",
+  "description": "Grab stars with everyone online. Golden stars are worth five.",
+  "dir": ".",
+  "productionBranch": "main",
+  "genre": "Party",
+  "icon": "store/icon.png",
+  "thumbnails": ["store/thumb-1.png", "store/thumb-2.png", "store/thumb-3.png"],
+  "controls": [
+    { "keys": ["W", "A", "S", "D"], "action": "Move" },
+    { "keys": ["Click"], "action": "Go to a spot" },
+    { "keys": ["/"], "action": "Chat" }
+  ],
+  "help": "Grab stars. Golden ones are worth five. Whoever has the most wears the crown. Everyone online plays in the same arena.",
+  "badges": [
+    { "id": "first-star", "name": "First Star", "description": "Grab your first star." },
+    { "id": "party-star", "name": "Party Star", "description": "Grab a golden star." }
+  ]
+}

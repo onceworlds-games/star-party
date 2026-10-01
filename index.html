@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Star Party</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #140c3a; }
+    canvas { display: block; width: 100vw; height: 100vh; touch-action: none; }
+
+    .overlay {
+      position: fixed; inset: 0; display: grid; place-items: center; padding: 24px;
+      background: radial-gradient(ellipse at 50% 40%, rgba(40, 22, 110, 0.82), rgba(12, 6, 34, 0.94));
+      font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      text-align: center; color: #fff;
+    }
+    .overlay.off { display: none; }
+    .card { display: grid; justify-items: center; gap: 18px; max-width: 520px; }
+    h1 {
+      margin: 0; font-size: clamp(46px, 13vw, 104px); line-height: 0.92; font-weight: 900; letter-spacing: -0.03em;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #fff6c9 0%, #ffd35c 55%, #ff9a3c 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 5px 0 #7a3b00) drop-shadow(0 14px 22px rgba(255, 150, 40, 0.35));
+    }
+    .note { margin: 0; min-height: 1.3em; font-size: 16px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #c8bdf5; }
+    button {
+      min-width: 220px; min-height: 64px; padding: 0 44px; border: 0; border-radius: 999px; cursor: pointer;
+      font: 900 24px/1 ui-rounded, 'SF Pro Rounded', system-ui, sans-serif; letter-spacing: 0.04em; text-transform: uppercase;
+      color: #1b1245; background: #ffd35c; box-shadow: 0 7px 0 #c48a12, 0 16px 30px rgba(0, 0, 0, 0.35);
+    }
+    button:active { transform: translateY(4px); box-shadow: 0 3px 0 #c48a12, 0 8px 18px rgba(0, 0, 0, 0.35); }
+    button:focus-visible { outline: 4px solid #fff; outline-offset: 4px; }
+    button:disabled { opacity: 0.6; cursor: default; }
+    .best { margin: 0; min-height: 1.2em; font-size: 15px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #8f82c9; }
+  </style>
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="overlay" class="overlay">
+    <div class="card">
+      <h1 id="heading">Star Party</h1>
+      <p id="note" class="note">Grab stars · Beat the crowd</p>
+      <button id="play" type="button" disabled>Play</button>
+      <p id="best" class="best"></p>
+    </div>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
